@@ -9,7 +9,7 @@ Check out the Netflix clone UI : https://movieverse-be482.web.app/
 
 ![Screenshot (277)](https://user-images.githubusercontent.com/102823769/176611209-816602b1-d0b2-4b9b-992e-0c6255a2da01.png)
 
-<h3> #Tailer Pop-Up </h3>
+<h3> #Trailer Pop-Up </h3>
 
 ![Screenshot (279)](https://user-images.githubusercontent.com/102823769/176612203-f069fcb5-aaaf-4a21-8225-6527e2f86cdd.png)
 
