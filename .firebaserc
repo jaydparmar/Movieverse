@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "development": "movieverse-be482",
+    "default": "movieverse-be482"
+  },
+  "targets": {}
+}
