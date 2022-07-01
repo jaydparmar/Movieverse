@@ -6,6 +6,7 @@ import { BiPlay } from 'react-icons/bi'
 import { AiOutlinePlus, AiOutlineRadiusBottomright } from 'react-icons/ai'
 import Youtube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
+import { auth } from '../../firebase';
 
 // const ApiKey = "b344471bf864db8656c45f955ac375fe"
 const url = "https://api.themoviedb.org/3/movie/upcoming?api_key=b344471bf864db8656c45f955ac375fe"
@@ -27,6 +28,11 @@ const Home = () => {
     },
 
   };
+
+
+
+
+
   const [upcomingmovies, setupcomingmovies] = useState([])
   const [popularmovies, setpopularmovies] = useState([])
   const [nowplayingmovies, setnowplayingmovies] = useState([])
@@ -104,13 +110,13 @@ const Home = () => {
           className="banner"
           style={{
             backgroundSize: "cover",
-            backgroundImage: (x !== -1) ? `url(${`${imgurl}/${popularmovies[x].backdrop_path}`})` : 'rgb(16,16,16)',
+            backgroundImage: (x !== -1 && popularmovies.length>0) ? `url(${`${imgurl}/${popularmovies[x].backdrop_path}`})` : 'rgb(16,16,16)',
             backgroundPosition: "center center"
 
           }}
         >
-          {x !== -1 && <h1>{popularmovies[x].original_title}</h1>}
-          {x !== -1 && <p>{popularmovies[x].overview}</p>}
+          {x !== -1 && popularmovies.length>0 && <h1>{popularmovies[x].original_title}</h1>}
+          {x !== -1 && popularmovies.length>0 &&<p>{popularmovies[x].overview}</p>}
 
           <div>
             <button><BiPlay /> Play </button>

@@ -1,17 +1,21 @@
-*{
+* {
     margin: 0%;
     padding: 0%;
     font-family: 'Nunito Sans', sans-serif;
-    
+
 }
-* > ::-webkit-scrollbar{
+
+*> ::-webkit-scrollbar {
     display: none;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
-nav>div>a{
+
+nav>div>a {
     text-decoration: none;
 }
-.header{
+
+.header {
     height: 100px;
     background-color: black;
     display: flex;
@@ -20,24 +24,31 @@ nav>div>a{
     box-sizing: border-box;
     justify-content: space-between;
 }
-.header > img{
+
+.header>img {
     height: 150%;
+    cursor: pointer;
 }
-nav>div{
+
+nav>div {
     width: 100%;
     margin-left: 4rem;
 }
-nav> svg{
-     font-size: 1.7rem;
-     color: white;
+
+nav>svg {
+    margin-right: 30px;
+    font-size: 3rem;
+    color: white;
     cursor: pointer;
 }
-nav>div>a{
+
+nav>div>a {
     margin: 2vmax;
     color: white;
     font-size: 1.3rem;
     font-weight: 300;
 }
-nav>svg:hover{
-    color: rgb(203, 145, 145);
+
+nav>svg:hover {
+    color: rgb(198, 182, 182);
 }
