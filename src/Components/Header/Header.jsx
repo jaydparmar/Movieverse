@@ -19,7 +19,7 @@ const Header = () => {
   }
   const pushtohome=async(e)=>{
     e.preventDefault();
-    navigate("/home");
+    navigate("/");
   }
 
   return (

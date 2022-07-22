@@ -2,6 +2,7 @@ import React, {useRef} from 'react'
 import './SignUpscreen.css'
 import { auth } from '../../firebase';
 import {  useNavigate } from 'react-router-dom';
+import {toast} from 'react-toastify'
 const SignUpScreen = () => {
     const emailRef=useRef(null);
     const passwordRef=useRef(null);
@@ -12,11 +13,12 @@ const SignUpScreen = () => {
             emailRef.current.value,
             passwordRef.current.value
         ).then((authUser)=>{
-                console.log(authUser);
-                navigate("/home");
+                // console.log(authUser);
+                toast.success('Register Successfully');
+                navigate("/");
         })
         .catch((error) => {
-            alert(error.message);
+            toast.error('User is already exists');
         });
     };
     const SignInbutton=(e)=>{
@@ -25,11 +27,12 @@ const SignUpScreen = () => {
             emailRef.current.value,
             passwordRef.current.value
         ).then((authUser)=>{
-                console.log(authUser);
-                navigate("/home")
+                // console.log(authUser);
+                toast.success('Login Successfully');
+                navigate("/")
         })
         .catch((error) => {
-            alert(error.message);
+            toast.error('Invalid username/password');
         });
     }
 

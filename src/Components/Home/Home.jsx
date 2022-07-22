@@ -7,6 +7,7 @@ import { AiOutlinePlus, AiOutlineRadiusBottomright } from 'react-icons/ai'
 import Youtube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
 import { auth } from '../../firebase';
+import Header from '../Header/Header';
 
 // const ApiKey = "b344471bf864db8656c45f955ac375fe"
 const url = "https://api.themoviedb.org/3/movie/upcoming?api_key=b344471bf864db8656c45f955ac375fe"
@@ -27,12 +28,7 @@ const Home = () => {
       autoplay: 1,
     },
 
-  };
-
-
-
-
-
+  };  
   const [upcomingmovies, setupcomingmovies] = useState([])
   const [popularmovies, setpopularmovies] = useState([])
   const [nowplayingmovies, setnowplayingmovies] = useState([])
@@ -104,15 +100,16 @@ const Home = () => {
     </div>
   )
   return (
-    <section className = 'home' >
     <>
+    <Header />
+    <section className = 'home' >
         <div
           className="banner"
           style={{
             backgroundSize: "cover",
             backgroundImage: (x !== -1 && popularmovies.length>0) ? `url(${`${imgurl}/${popularmovies[x].backdrop_path}`})` : 'rgb(16,16,16)',
             backgroundPosition: "center center"
-
+            
           }}
         >
           {x !== -1 && popularmovies.length>0 && <h1>{popularmovies[x].original_title}</h1>}
@@ -123,7 +120,6 @@ const Home = () => {
             <button>My List <AiOutlinePlus /> </button>
           </div>
         </div>
-      </>
       {trailerUrl && <Youtube style={{zIndex:"10000"}}className='trailer' videoId={trailerUrl} opts={opts} />}
         {upcomingmovies.length > 0 && <Row title={"Upcoming movies"} arr={upcomingmovies} />}
         {popularmovies.length > 0 && <Row title={"Popular Movies"} arr={popularmovies} />}
@@ -132,9 +128,10 @@ const Home = () => {
           <div className="takegenre">
         {genre.length>0 && genre.map((item) => (
           <Link key={item.id} to={`/genre/${item.id}`}>{item.name}</Link>
-        ))}
-  </div>
-  </section>
+          ))}
+    </div>
+    </section>
+  </>
   )
 }
 export default Home

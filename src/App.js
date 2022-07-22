@@ -8,6 +8,9 @@ import { auth } from './firebase';
 import { useDispatch, useSelector } from 'react-redux';
 import {login, logout} from './Features/UserSlice'
 import Profile from './Components/ProfileScreen/Profile'
+import PrivateRoutes from './Components/PrivateRoutes/PrivateRoutes';
+import UnProtectedRoutes from './Components/PrivateRoutes/UnProtectedRoutes';
+
 function App() {
   const {user}=useSelector((state)=>(
     state.user
@@ -18,7 +21,6 @@ function App() {
       var unsubscribe=auth.onAuthStateChanged((userAuth)=>{
       if(userAuth)
       {
-        console.log(userAuth.email);
         //this is for when user login
         dispatch(
           login({
@@ -35,24 +37,19 @@ function App() {
     });
     return unsubscribe;
   }, [dispatch]);
+
   return (
     <Router>
-      {
-        !user ? (
-          <>
-          <Routes>
-            <Route exact path="/" element={<Login/>}/>
-          </Routes>
-          </>
-        ):
-        <>
-        <Header/>
         <Routes>
-          <Route exact path='/profile' element={<Profile/>}/>
-          <Route exact path="/home" element={<Home/>}/>
+          <Route exact path='/' element={<PrivateRoutes />} >
+            <Route exact path='/' element={<Home />} />
+            <Route exact path='/profile' element={<Profile />} />
+          </Route>
+
+          <Route exact path='/' element={<UnProtectedRoutes />} >
+            <Route exact path='/login' element={<Login />} />
+          </Route>
         </Routes>
-        </>
-      }
     </Router>
     
   );
