@@ -1,4 +1,4 @@
-<h1 style={{font size=3rem}}>NetFlix Clone</h1>
+<h1 style={{font size=3rem}}>Movieverse</h1>
 
 Check out the movieverse : https://movieverse-be482.web.app/
 
@@ -26,5 +26,5 @@ Check out the movieverse : https://movieverse-be482.web.app/
 
 ![Screenshot (279)](https://user-images.githubusercontent.com/102823769/176612203-f069fcb5-aaaf-4a21-8225-6527e2f86cdd.png)
 
-I created this Netflix UI clone application project. It fetches the movie data from a third-party API. It also has trailer pop-ups functionality implemented into it. The clone has been built using React JS, React-hooks, Styled-component, Material-UI, TMDB API, and Firebase (hosting & Deploying). In this netflix clone I used redux and firebase Authentication for Sign up / Login. 
+I created this movieverse web project. It fetches the movie data from a third-party API. It also has trailer pop-ups functionality implemented into it. The clone has been built using React JS, React-hooks, Styled-component, Material-UI, TMDB API, and Firebase (hosting & Deploying). In this netflix clone I used redux and firebase Authentication for Sign up / Login. 
 
